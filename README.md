@@ -42,33 +42,12 @@ recall and F1 using IoU matching (IoU ≥ 0.5, confidence ≥ 0.25), with distri
 
 Both notebooks were developed in **Google Colab** with a GPU runtime.
 
-```bash
-pip install ultralytics roboflow opencv-python-headless torch torchvision pillow scikit-learn pandas matplotlib pyyaml
-```
-
-1. Open a notebook in Colab (or locally in Jupyter).
-2. Update the dataset and weight paths (Google Drive paths in the classification notebook,
-   `/content/...` paths in the detection notebook).
-3. For detection, set your own Roboflow API key (see below) to download the dataset.
-4. Run the cells in order: train, validate, then test.
-
-## Configuration notes
-
-- **Never commit API keys.** Load your Roboflow key from an environment variable or Colab
-  secrets instead of hardcoding it:
-```python
-  import os
-  rf = Roboflow(api_key=os.environ["ROBOFLOW_API_KEY"])
-```
-- Trained weights (`best.pt`) and datasets are not included; add them to `.gitignore`.
-
 ## Datasets
 
 - [Kvasir](https://datasets.simula.no/kvasir/)
 - GastroHun, GastroVision, EDD2020
 - Gastrointestinal Endoscopy Polyp dataset, E-endoscopy BE/RE
 
-Please follow each dataset's license and citation requirements.
 
 ## Limitations
 
@@ -79,6 +58,3 @@ Please follow each dataset's license and citation requirements.
 
 Built with [Ultralytics YOLO](https://github.com/ultralytics/ultralytics) and Roboflow.
 
-## License
-
-Choose a license (e.g. MIT) and add a `LICENSE` file.
